@@ -28,9 +28,11 @@ try:
             if st.button('Run Modelling'):
 
                 s = setup(data=df, target=features_target)
-                st.dataframe(s)
+                setup_df = pull()
+                st.dataframe(setup_df)
                 best_model = compare_models()
-                st.dataframe(best_model)
+                compare_df = pull()
+                st.dataframe(compare_df)
                 save_model(best_model, 'best_model') 
             
             
