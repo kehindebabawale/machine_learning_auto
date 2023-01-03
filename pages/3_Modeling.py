@@ -27,7 +27,7 @@ try:
             features_target = st.selectbox('Choose the Target Column', df.columns) 
             if st.button('Run Modelling'):
 
-                s = setup(data=df, target=features_target)
+                setup_df = setup(data=df, target=features_target)
                 setup_df = pull()
                 st.dataframe(setup_df)
                 best_model = compare_models()
